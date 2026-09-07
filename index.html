@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrupción Policial — Accountability policial en España</title>
+  <meta name="description" content="Registro documentado de actuaciones policiales ilegales, abusivas e irregulares en España. Periodismo de datos riguroso y legalmente correcto.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Corrupción Policial — Accountability policial en España">
+  <meta property="og:description" content="Registro documentado de actuaciones policiales ilegales e irregulares en España.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://corrupcionpolicial.com/">
+  <meta property="og:image" content="https://corrupcionpolicial.com/og-image.jpg">
+  <link rel="canonical" href="https://corrupcionpolicial.com/">
+  <link rel="alternate" type="application/rss+xml" title="Corrupción Policial RSS" href="/rss.xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://stats.corrupcionpolicial.com/script.js" data-website-id="d26212a6-21b0-4602-80f9-0e5a6433c31f"></script>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- ═══════════════════════════════════ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" id="logo-link">
+        <span class="logo-dot"></span>
+        <span data-i18n="site-name">Corrupción Policial</span>
+      </a>
+      <div class="header-right">
+        <span class="header-tagline" data-i18n="site-tagline">Accountability policial en España</span>
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-btn active" data-lang="es" onclick="i18n.setLang('es')" title="Español">ES</button>
+          <button class="lang-btn" data-lang="en" onclick="i18n.setLang('en')" title="English">EN</button>
+        </div>
+      </div>
+    </div>
+    <!-- Buscador siempre visible -->
+    <div class="header-search">
+      <svg class="main-search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="main-search-input" data-i18n-placeholder="search-main-ph"
+        placeholder="Buscar por caso, cuerpo policial, ciudad, delito…" autocomplete="off"
+        oninput="app.handleSearch(event)">
+      <button class="main-search-clear" id="main-search-clear" onclick="app.clearSearch()" style="display:none;" aria-label="Limpiar">✕</button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ BREAKING BAR ═══ -->
+  <div class="breaking-bar" id="breaking-bar" style="display:none;">
+    <span class="breaking-label" data-i18n="breaking">ÚLTIMO</span>
+    <span class="breaking-text" id="breaking-text"></span>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════ HERO 3D BANNER ═══ -->
+    <section id="hero-3d">
+      <canvas id="hero3d-canvas"></canvas>
+      <div class="hero3d-overlay">
+        <div class="hero3d-inner">
+          <div class="hero3d-eyebrow" data-i18n="site-tagline">Accountability policial en España</div>
+          <h1 class="hero3d-title">Corrupción <span class="hero3d-title-accent">Policial</span></h1>
+          <p class="hero3d-sub" data-i18n="hero3d-sub">Cada nodo, un caso. Cada conexión, un patrón de impunidad. Un registro vivo y documentado de la mala praxis policial en España.</p>
+          <div class="hero3d-stats">
+            <div class="hero3d-stat">
+              <span class="hero3d-stat-num animated-counter" id="h3d-casos" data-target="0">0</span>
+              <span class="hero3d-stat-label" data-i18n="h3d-casos-label">Casos documentados</span>
+            </div>
+            <div class="hero3d-stat">
+              <span class="hero3d-stat-num animated-counter" id="h3d-condenas" data-target="0">0</span>
+              <span class="hero3d-stat-label" data-i18n="h3d-condenas-label">Condenas firmes</span>
+            </div>
+            <div class="hero3d-stat">
+              <span class="hero3d-stat-num animated-counter" id="h3d-investigados" data-target="0">0</span>
+              <span class="hero3d-stat-label" data-i18n="h3d-investigados-label">En investigación</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero3d-scroll" aria-hidden="true">
+          <span data-i18n="h3d-scroll">Explorar</span>
+          <div class="hero3d-scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ═══════════════════════════════════ HERO ═══ -->
+      <section class="hero" id="hero-section" style="display:none;">
+        <div class="hero-inner">
+          <div class="hero-main">
+            <div class="hero-eyebrow" data-i18n="section-featured">Destacado</div>
+            <h1 class="hero-title" id="hero-title"></h1>
+            <p class="hero-lead" id="hero-lead"></p>
+            <div class="hero-meta" id="hero-meta"></div>
+            <div class="tags" id="hero-tags" style="margin-top:16px;"></div>
+          </div>
+          <div class="hero-aside" id="hero-aside">
+            <div class="hero-aside-title" data-i18n="section-recent">Artículos recientes</div>
+            <div id="hero-aside-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════ DASHBOARD WIDGET ═══ -->
+      <section class="dashboard-widget" id="dashboard-widget" style="display:none; position:relative; overflow:hidden; border-radius:var(--radius); border:1px solid var(--border); background:var(--bg-2); margin-bottom:2rem; padding:2rem; margin-top:2rem;">
+        <canvas id="particles-canvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity:0.25; pointer-events:none;"></canvas>
+        <div style="position:relative; z-index:1;">
+          <div class="widget-header" style="margin-bottom:1.5rem;">
+            <h2 style="font-size:1.5rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="21"></line><line x1="15" y1="21" x2="15" y2="9"></line></svg>
+              Impacto y Métricas Globales
+            </h2>
+            <p style="color:var(--text-dim); font-size:0.9rem;">Análisis en tiempo real de los datos recopilados por Corrupción Policial.</p>
+          </div>
+          
+          <div class="widget-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+            <div class="widget-stat-card article-card" style="padding:1.5rem; background:var(--bg-3); text-align:center;">
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Casos Documentados</div>
+              <div class="animated-counter" id="w-total-casos" data-target="0" style="font-size:2.8rem; font-weight:800; color:var(--white); font-family:var(--font-heading); line-height:1;">0</div>
+            </div>
+            <div class="widget-stat-card article-card" style="padding:1.5rem; background:var(--bg-3); text-align:center; border-bottom:3px solid #dc2626;">
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Condenas Firmes</div>
+              <div class="animated-counter" id="w-total-condenas" data-target="0" style="font-size:2.8rem; font-weight:800; color:var(--white); font-family:var(--font-heading); line-height:1;">0</div>
+            </div>
+            <div class="widget-stat-card article-card" style="padding:1.5rem; background:var(--bg-3); text-align:center; border-bottom:3px solid #f59e0b;">
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">En Investigación</div>
+              <div class="animated-counter" id="w-total-investigados" data-target="0" style="font-size:2.8rem; font-weight:800; color:var(--white); font-family:var(--font-heading); line-height:1;">0</div>
+            </div>
+            <div class="widget-stat-card article-card" style="padding:1.5rem; background:var(--bg-3); text-align:center; border-bottom:3px solid #3b82f6;">
+              <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Procesos Disciplinarios</div>
+              <div class="animated-counter" id="w-total-disciplinario" data-target="0" style="font-size:2.8rem; font-weight:800; color:var(--white); font-family:var(--font-heading); line-height:1;">0</div>
+            </div>
+          </div>
+
+          <div class="widget-chart" style="background:var(--bg-3); border-radius:var(--radius); padding:1.5rem; border:1px solid var(--border);">
+            <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--text-dim);">Distribución por Cuerpos</h3>
+            <div id="w-bar-chart" style="display:flex; flex-direction:column; gap:0.8rem;">
+              <!-- Barras inyectadas por JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════ MAPA POR CCAA ═══ -->
+      <section class="map-widget" id="map-widget" style="display:none;">
+        <div class="widget-header" style="margin-bottom:1.2rem;">
+          <h2 style="font-size:1.5rem; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21"></polygon><line x1="8" y1="3" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="21"></line></svg>
+            <span data-i18n="map-title">Mapa de casos por comunidad</span>
+          </h2>
+          <p style="color:var(--text-dim); font-size:0.9rem;" data-i18n="map-sub">Haz clic en una comunidad para filtrar sus casos. La intensidad refleja el número de casos documentados.</p>
+        </div>
+        <div class="map-grid">
+          <div class="map-canvas" id="map-canvas">
+            <!-- SVG inyectado por map.js -->
+            <div class="map-tooltip" id="map-tooltip" style="display:none;"></div>
+          </div>
+          <aside class="map-ranking" id="map-ranking">
+            <!-- Ranking inyectado por map.js -->
+          </aside>
+        </div>
+        <div class="map-footnote">
+          <button class="filter-btn" id="map-estatal-btn" onclick="ccaaMap.select('Estatal')">
+            <span data-i18n="map-estatal">Ámbito estatal</span> <span id="map-estatal-count" style="opacity:0.6;"></span>
+          </button>
+          <button class="filter-btn" id="map-reset-btn" onclick="ccaaMap.select('all')" style="display:none;">
+            ✕ <span data-i18n="map-reset">Quitar filtro</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════ MAIN CONTENT ═══ -->
+      <div class="main-grid">
+        <div class="main-column">
+          <div class="section-header">
+            <span class="section-title" data-i18n="section-latest">Últimas noticias</span>
+            <span class="section-count" id="article-count"></span>
+          </div>
+
+          <!-- Filtros rápidos móvil -->
+          <div class="tags" id="mobile-filters" style="margin-bottom:20px;"></div>
+
+          <div id="articles-list" class="articles-list">
+            <div class="loading"><div class="spinner"></div></div>
+          </div>
+
+          <div class="pagination" id="pagination"></div>
+        </div>
+
+        <!-- ══════════════════════════════ SIDEBAR ═══ -->
+        <aside class="sidebar">
+          <div class="methodology-notice">
+            <strong>Corrupción Policial</strong> — <span data-i18n="methodology-text">Sistema de periodismo automatizado sobre accountability policial en España.</span>
+          </div>
+
+          <div class="sidebar-block">
+            <input type="text" id="search-input" data-i18n-placeholder="sidebar-search" placeholder="Buscar artículos..." style="width:100%; padding: 10px 14px; background: var(--bg-3); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.85rem;" oninput="app.handleSearch(event)">
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-stat">
+              <span data-i18n="stat-total">Artículos publicados</span>
+              <span class="sidebar-stat-value" id="stat-total">0</span>
+            </div>
+            <div class="sidebar-stat">
+              <span data-i18n="stat-month">Este mes</span>
+              <span class="sidebar-stat-value" id="stat-month">0</span>
+            </div>
+          </div>
+
+
+          <div class="sidebar-block">
+            <div class="sidebar-block-title" data-i18n="sidebar-archive">Archivo</div>
+            <div id="archive-list" style="display: flex; flex-direction: column; gap: 4px;">
+              <!-- Llenado por JS -->
+            </div>
+          </div>
+
+          <!-- Componente 1: Donaciones Crypto -->
+          <div class="sidebar-block" style="background: rgba(220,38,38,0.05); border-color: rgba(220,38,38,0.2);">
+            <div class="sidebar-block-title" data-i18n="sidebar-donate" style="color: var(--accent);">Apoya este proyecto</div>
+            <p style="font-size:0.75rem; color:var(--text-dim); margin-bottom:12px; line-height:1.4;" data-i18n="donate-text">Periodismo independiente financiado por los lectores. Aceptamos donaciones anónimas en criptomonedas.</p>
+            
+            <!-- BTC -->
+            <div style="margin-bottom:8px;">
+              <div style="font-size:0.7rem; font-weight:600; color:var(--white); margin-bottom:4px;">Bitcoin (BTC)</div>
+              <div style="display:flex; gap:6px;">
+                <input type="text" id="wallet-btc" value="bc1qvpqecty7p03y2nl0ary980unm82nv4ywz3axpz" readonly style="flex:1; background:var(--bg-3); border:1px solid var(--border); color:var(--text-dim); font-size:0.7rem; padding:6px; border-radius:4px; font-family:monospace;">
+                <button onclick="app.copyCrypto('wallet-btc', this)" style="background:var(--accent); color:#fff; border:none; padding:0 10px; border-radius:4px; font-size:0.7rem; cursor:pointer;" data-i18n="donate-copy">Copiar</button>
+              </div>
+            </div>
+
+            <!-- ETH -->
+            <div style="margin-bottom:8px;">
+              <div style="font-size:0.7rem; font-weight:600; color:var(--white); margin-bottom:4px;">Ethereum (ETH)</div>
+              <div style="display:flex; gap:6px;">
+                <input type="text" id="wallet-eth" value="0x1c16A1362cfEF5E5B24886C2F40f21c8730f0E51" readonly style="flex:1; background:var(--bg-3); border:1px solid var(--border); color:var(--text-dim); font-size:0.7rem; padding:6px; border-radius:4px; font-family:monospace;">
+                <button onclick="app.copyCrypto('wallet-eth', this)" style="background:var(--accent); color:#fff; border:none; padding:0 10px; border-radius:4px; font-size:0.7rem; cursor:pointer;" data-i18n="donate-copy">Copiar</button>
+              </div>
+            </div>
+
+            <!-- SOL -->
+            <div style="margin-bottom:8px;">
+              <div style="font-size:0.7rem; font-weight:600; color:var(--white); margin-bottom:4px;">Solana (SOL)</div>
+              <div style="display:flex; gap:6px;">
+                <input type="text" id="wallet-sol" value="BFKwHVJ2mvuz6BfyBNtfgJD2hhzD9mE7DcYaswBXj7LQ" readonly style="flex:1; background:var(--bg-3); border:1px solid var(--border); color:var(--text-dim); font-size:0.7rem; padding:6px; border-radius:4px; font-family:monospace;">
+                <button onclick="app.copyCrypto('wallet-sol', this)" style="background:var(--accent); color:#fff; border:none; padding:0 10px; border-radius:4px; font-size:0.7rem; cursor:pointer;" data-i18n="donate-copy">Copiar</button>
+              </div>
+            </div>
+
+            <!-- XMR -->
+            <div>
+              <div style="font-size:0.7rem; font-weight:600; color:var(--white); margin-bottom:4px;">Monero (XMR) — <span style="opacity:0.7;">100% anónima</span></div>
+              <div style="display:flex; gap:6px;">
+                <input type="text" id="wallet-xmr" value="49swUeWpEX2KakdDsybKzYbWgidQAVoBcSgHEUgb1rWwafpFzWPfqRbQRC6BcMXUGcd3uRn4DU9CmFRm2TAY5VyPA3RuPxr" readonly style="flex:1; background:var(--bg-3); border:1px solid var(--border); color:var(--text-dim); font-size:0.7rem; padding:6px; border-radius:4px; font-family:monospace;">
+                <button onclick="app.copyCrypto('wallet-xmr', this)" style="background:var(--accent); color:#fff; border:none; padding:0 10px; border-radius:4px; font-size:0.7rem; cursor:pointer;" data-i18n="donate-copy">Copiar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-block-title" data-i18n="footer-legal-title">Aviso legal</div>
+            <p style="font-size:0.75rem;color:var(--text-dim);line-height:1.6;" data-i18n="legal-disclaimer">
+              Información basada en fuentes públicas. Presunción de inocencia respetada.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════ BOTÓN + MODAL DE DENUNCIA ═══ -->
+  <button class="report-fab" onclick="app.openContact()" title="Envía tu denuncia">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"></path></svg>
+    <span data-i18n="report-btn">Envía tu denuncia</span>
+  </button>
+
+  <div class="report-modal-backdrop" id="report-modal" style="display:none;" onclick="if(event.target===this)app.closeContact()">
+    <div class="report-modal">
+      <button class="report-modal-close" onclick="app.closeContact()" aria-label="Cerrar">✕</button>
+      <h2 data-i18n="report-title">¿Has presenciado o sufrido una actuación policial irregular?</h2>
+      <p data-i18n="report-text">Tu testimonio importa. Cuéntanos qué ocurrió, dónde y cuándo, o envíanos un enlace a la noticia. El equipo editorial lo verificará y documentará. Puedes escribir desde un correo anónimo si lo prefieres: no publicamos datos del remitente.</p>
+      <textarea id="report-textarea" rows="6" data-i18n-placeholder="report-placeholder" placeholder="Describe los hechos: qué ocurrió, cuándo, dónde, qué cuerpo policial... o pega un enlace."></textarea>
+      <div class="report-modal-actions">
+        <button class="report-send" onclick="app.sendContact()" data-i18n="report-send">Enviar por correo</button>
+        <span class="report-note" data-i18n="report-note">Se abrirá tu aplicación de correo con el mensaje preparado.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-col-title">Corrupción Policial</div>
+        <p data-i18n="footer-about">Proyecto de periodismo de datos sobre actuaciones policiales ilegales en España.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="footer-legal-title">Aviso legal</div>
+        <ul>
+          <li data-i18n="footer-legal-1">Información basada en fuentes públicas documentadas</li>
+          <li data-i18n="footer-legal-2">Presunción de inocencia (art. 24 CE)</li>
+          <li data-i18n="footer-legal-3">Terminología LECrim 2015</li>
+          <li data-i18n="footer-legal-4">Derecho de rectificación disponible</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="footer-links-title">Recursos</div>
+        <ul>
+          <li><a href="#" data-i18n="footer-methodology">Metodología</a></li>
+          <li><a href="mailto:contacto@corrupcionpolicial.com" data-i18n="footer-contact">Contacto</a></li>
+          <li><a href="/rss.xml" data-i18n="footer-rss">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer-copyright">Corrupción Policial — Periodismo de accountability policial</span>
+      <span data-i18n="footer-license">Contenidos bajo licencia CC BY-SA 4.0</span>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+  <script src="hero3d.js"></script>
+  <script src="map.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>
