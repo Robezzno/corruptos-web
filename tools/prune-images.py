@@ -68,6 +68,20 @@ def main():
     if not os.path.isdir(dir_img) or not os.path.isfile(indice):
         sys.exit(f'error: {raiz} no parece la raiz del sitio (falta images/ o articles/index.json)')
 
+    # NO ejecutar esto dentro del repo del generador. Alli las imagenes tambien
+    # las reclaman los articulos en cola (queue/), que este script no ve: podaria
+    # la imagen de articulos pendientes de revision y se publicarian sin foto.
+    padre = os.path.dirname(raiz)
+    for sospechoso in (raiz, padre):
+        if os.path.isdir(os.path.join(sospechoso, 'queue')) or \
+           os.path.isfile(os.path.join(sospechoso, 'backend', 'agent.py')):
+            sys.exit(
+                'ABORTADO: esto es el checkout del generador (corruptos), no el sitio publicado.\n'
+                '  Alli las imagenes tambien las reclaman los articulos en cola, que este\n'
+                '  script no mira. Usa el que si los tiene en cuenta:\n'
+                '      python3 backend/prune_images.py --apply'
+            )
+
     idx = json.load(open(indice, encoding='utf-8'))
     en_uso = referenciadas(raiz)
     todas = [f for f in os.listdir(dir_img) if f.lower().endswith(EXT)]
