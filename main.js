@@ -240,6 +240,7 @@ const app = {
     if (hero.image_url && !document.getElementById('hero-img')) {
       const img = document.createElement('img');
       img.id = 'hero-img';
+      img.onerror = () => img.remove();
       img.src = hero.image_url;
       img.style.width = '100%';
       img.style.maxHeight = '400px';
@@ -382,7 +383,7 @@ const app = {
       lastYear = year || lastYear;
       return divider + `
       <article class="article-card">
-        ${a.image_url ? `<a href="article.html?slug=${escapeHTML(a.slug)}"><img src="${escapeHTML(a.image_url)}" style="width:100%; height:180px; object-fit:cover; border-radius:var(--radius) var(--radius) 0 0; display:block;"></a>` : ''}
+        ${a.image_url ? `<a href="article.html?slug=${escapeHTML(a.slug)}"><img src="${escapeHTML(a.image_url)}" onerror="this.closest('a').style.display='none'" style="width:100%; height:180px; object-fit:cover; border-radius:var(--radius) var(--radius) 0 0; display:block;"></a>` : ''}
         <div class="article-card-body">
           <div class="article-card-eyebrow">
             <span class="status-badge status-${escapeHTML(a.legal_status)}">${escapeHTML(i18n.t('status-' + a.legal_status))}</span>
@@ -489,7 +490,7 @@ const app = {
       imgWrap.style.maxWidth = 'var(--col-main)';
       imgWrap.style.width = '100%';
       imgWrap.innerHTML = `
-        <img src="${escapeHTML(a.image_url)}" style="width:100%; max-height:500px; object-fit:cover; border-radius:var(--radius-lg, 12px); box-shadow: 0 12px 40px rgba(0,0,0,0.5); border: 1px solid var(--border);">
+        <img src="${escapeHTML(a.image_url)}" onerror="this.closest('figure').remove()" style="width:100%; max-height:500px; object-fit:cover; border-radius:var(--radius-lg, 12px); box-shadow: 0 12px 40px rgba(0,0,0,0.5); border: 1px solid var(--border);">
         <figcaption style="font-size:0.7rem; color:var(--text-dim); margin-top:8px; text-align:right;">Imagen generada conceptualmente por IA</figcaption>
       `;
       // insert after header
