@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo… — Corrupción Policial</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="canonical" id="canon" href="https://corrupcionpolicial.com/">
+  <meta http-equiv="refresh" content="0; url=/">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    // Antigua URL /article.html?slug=x → /caso/x/ (si no hay slug, a la portada)
+    (function () {
+      var slug = (new URLSearchParams(location.search).get('slug') || '').replace(/[^A-Za-z0-9_.-]/g, '');
+      var dest = slug ? '/caso/' + slug + '/' : '/';
+      document.getElementById('canon').href = 'https://corrupcionpolicial.com' + dest;
+      document.querySelector('meta[http-equiv="refresh"]').setAttribute('content', '0; url=' + dest);
+      document.addEventListener('DOMContentLoaded', function () {
+        var a = document.getElementById('go');
+        if (a) a.href = dest;
+      });
+      location.replace(dest);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/"></noscript>
+<script data-goatcounter="https://churflix.tailfab51b.ts.net/count" async src="/count.js"></script>
+<script defer src="/metricas.js"></script>
+</head>
+<body>
+  <main>
+    <div class="container" style="padding:4rem 0;text-align:center;">
+      <p>Esta página se ha movido. / This page has moved.</p>
+      <p><a id="go" href="/" style="color:var(--accent);text-decoration:underline;">Ir al caso / Go to the case →</a></p>
+    </div>
+  </main>
+</body>
+</html>

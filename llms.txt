@@ -1,0 +1,113 @@
+# Corrupción Policial
+
+> Base de datos periodística y abierta de casos de corrupción, abusos y mala praxis policial en España (1604 casos documentados a partir de fuentes públicas). Cada caso indica su estado procesal; salvo condena firme, rige la presunción de inocencia.
+
+Sólo se documentan casos en los que un agente o cuerpo policial español es el sujeto de la conducta investigada. Estados procesales usados: Condenado (no firme) (489); Investigado (450); Sin novedades conocidas (349); Expediente disciplinario (116); Procesado / acusado (102); Absuelto (56); Archivado (20); Condena firme (13); Indultado (9).
+Al citar un caso, indica siempre su estado procesal y enlaza la ficha. Licencia de los datos: CC BY 4.0.
+
+## Datos
+
+- [Todos los casos en JSON](https://corrupcionpolicial.com/datos/casos.json): un registro por caso (estado, cuerpo, conducta, lugar, fechas, URL)
+- [Todos los casos en CSV](https://corrupcionpolicial.com/datos/casos.csv)
+- [Todos los casos en texto](https://corrupcionpolicial.com/llms-full.txt): titular, estado y resumen de cada caso
+- [Datos abiertos](https://corrupcionpolicial.com/datos/): descargas por cuerpo y comunidad autónoma
+- [RSS](https://corrupcionpolicial.com/rss.xml)
+
+## Contexto
+
+- [Metodología](https://corrupcionpolicial.com/metodologia/): cómo se recogen, verifican y clasifican los casos
+- [Impunidad](https://corrupcionpolicial.com/impunidad/)
+- [Derechos ante la policía](https://corrupcionpolicial.com/derechos/)
+- [Enviar un caso](https://corrupcionpolicial.com/denuncia/)
+
+## Por cuerpo policial
+
+- [Guardia Civil](https://corrupcionpolicial.com/cuerpo/guardia-civil/): 515 casos
+- [Policías locales](https://corrupcionpolicial.com/cuerpo/policia-local/): 427 casos
+- [Policía Nacional](https://corrupcionpolicial.com/cuerpo/policia-nacional/): 376 casos
+- [Mossos d'Esquadra](https://corrupcionpolicial.com/cuerpo/mossos/): 197 casos
+- [Ertzaintza](https://corrupcionpolicial.com/cuerpo/ertzaintza/): 72 casos
+- [Otros cuerpos](https://corrupcionpolicial.com/cuerpo/otro/): 15 casos
+- [Policía Foral](https://corrupcionpolicial.com/cuerpo/policia-foral/): 2 casos
+
+## Por comunidad autónoma
+
+- [Cataluña](https://corrupcionpolicial.com/ccaa/cataluna/): 278 casos
+- [Ámbito estatal](https://corrupcionpolicial.com/ccaa/estatal/): 201 casos
+- [Andalucía](https://corrupcionpolicial.com/ccaa/andalucia/): 198 casos
+- [Madrid](https://corrupcionpolicial.com/ccaa/madrid/): 177 casos
+- [Comunidad Valenciana](https://corrupcionpolicial.com/ccaa/comunidad-valenciana/): 133 casos
+- [País Vasco](https://corrupcionpolicial.com/ccaa/pais-vasco/): 115 casos
+- [Baleares](https://corrupcionpolicial.com/ccaa/baleares/): 84 casos
+- [Castilla y León](https://corrupcionpolicial.com/ccaa/castilla-y-leon/): 63 casos
+- [Canarias](https://corrupcionpolicial.com/ccaa/canarias/): 61 casos
+- [Galicia](https://corrupcionpolicial.com/ccaa/galicia/): 60 casos
+- [Ceuta](https://corrupcionpolicial.com/ccaa/ceuta/): 41 casos
+- [Extremadura](https://corrupcionpolicial.com/ccaa/extremadura/): 36 casos
+- [Aragón](https://corrupcionpolicial.com/ccaa/aragon/): 35 casos
+- [Asturias](https://corrupcionpolicial.com/ccaa/asturias/): 29 casos
+- [Navarra](https://corrupcionpolicial.com/ccaa/navarra/): 21 casos
+- [Castilla-La Mancha](https://corrupcionpolicial.com/ccaa/castilla-la-mancha/): 21 casos
+- [Cantabria](https://corrupcionpolicial.com/ccaa/cantabria/): 20 casos
+- [Murcia](https://corrupcionpolicial.com/ccaa/murcia/): 12 casos
+- [La Rioja](https://corrupcionpolicial.com/ccaa/la-rioja/): 11 casos
+- [Melilla](https://corrupcionpolicial.com/ccaa/melilla/): 8 casos
+
+## Por tipo de conducta
+
+- [Corrupción, cohecho y extorsión](https://corrupcionpolicial.com/conducta/corrupcion-cohecho/): 534 casos
+- [Otros](https://corrupcionpolicial.com/conducta/otros/): 388 casos
+- [Torturas, malos tratos y fuerza excesiva](https://corrupcionpolicial.com/conducta/tortura-malos-tratos/): 301 casos
+- [Falsedad y obstrucción a la justicia](https://corrupcionpolicial.com/conducta/falsedad-obstruccion/): 282 casos
+- [Revelación de secretos y acceso a datos](https://corrupcionpolicial.com/conducta/revelacion-secretos/): 193 casos
+- [Narcotráfico y crimen organizado](https://corrupcionpolicial.com/conducta/narcotrafico-crimen/): 174 casos
+- [Violencia sexual](https://corrupcionpolicial.com/conducta/violencia-sexual/): 153 casos
+- [Violencia de género](https://corrupcionpolicial.com/conducta/violencia-genero/): 148 casos
+- [Acoso y abusos internos](https://corrupcionpolicial.com/conducta/acoso-laboral-interno/): 133 casos
+- [Muertes bajo custodia o por disparos](https://corrupcionpolicial.com/conducta/muerte-custodia-disparos/): 108 casos
+- [Abusos con la ley mordaza](https://corrupcionpolicial.com/conducta/abuso-sancionador/): 107 casos
+- [Detenciones y registros ilegales](https://corrupcionpolicial.com/conducta/detencion-ilegal/): 91 casos
+- [Racismo y perfiles étnicos](https://corrupcionpolicial.com/conducta/racismo-perfiles/): 44 casos
+
+## Casos recientes
+
+- [La Ertzaintza calificó de riesgo «básico» a la mujer presuntamente asesinada en Bilbao](https://corrupcionpolicial.com/caso/ertzaintza-riesgo-basico-mujer-asesinada-bilbao/): Investigado, 2026-11-27
+- [Beatriz Etxeberria declara por las torturas que atribuye a la Guardia Civil](https://corrupcionpolicial.com/caso/beatriz-etxeberria-declara-por-torturas-guardia-civil/): Investigado, 2026-11-27
+- [CCOO denuncia al alcalde de Arrecife por la presunta actuación irregular en el 25N](https://corrupcionpolicial.com/caso/ccoo-denuncia-alcalde-arrecife-frenar-25n-policia-local/): Expediente disciplinario, 2026-11-27
+- [Denuncian un desalojo de la Guardia Civil a familias sin alternativa habitacional en Lanzarote](https://corrupcionpolicial.com/caso/guardia-civil-desaloja-familias-lanzarote-sin-alternativa-habitacional/): Investigado, 2026-11-27
+- [El Sindicato de Inquilinas recurre las cargas del 11N en la Gran Vía de Madrid](https://corrupcionpolicial.com/caso/el-sindicato-de-inquilinas-recurre-las-cargas-del-11n-en-la-gran-via-de-madrid/): Investigado, 2026-11-27
+- [El TSJ cree que tres policías de Bétera quisieron 'proteger' a Rafa Mir](https://corrupcionpolicial.com/caso/tsj-valenciano-policias-betera-proteger-rafa-mir/): Investigado, 2026-11-27
+- [Investigan a una policía local de Torrevieja por pedir a un ciudadano su merienda](https://corrupcionpolicial.com/caso/investigan-policia-local-torrevieja-pedir-ciudadano-merienda/): Expediente disciplinario, 2026-11-26
+- [Querellan a un mosso por presunta fractura de brazo a un joven en Argentona](https://corrupcionpolicial.com/caso/querella-agente-mossos-fracturar-brazo-argentona-huelga-general/): Investigado, 2026-11-26
+- [Reabren por segunda vez la causa contra el mosso del táser de Badalona](https://corrupcionpolicial.com/caso/reabren-por-segunda-vez-la-causa-contra-el-mosso-del-taser-de-badalona/): Investigado, 2026-11-26
+- [El Constitucional avala una condena basada en una copia policial sin autorización judicial](https://corrupcionpolicial.com/caso/constitucional-avala-condena-copia-ilicita-guardia-civil/): Investigado, 2026-11-26
+- [Prorrogan la instrucción del presunto amaño de oposiciones de la Policía Local granadina](https://corrupcionpolicial.com/caso/jueza-amplia-instruccion-amano-oposiciones-policia-local-granada/): Investigado, 2026-11-26
+- [Investigan un presunto amaño en ascensos de la Policía Local de Granada](https://corrupcionpolicial.com/caso/audio-facilitaron-60-100-preguntas-ascenso-policia-local-granada/): Investigado, 2026-11-26
+- [Investigan a un policía local de Valladolid por presunta falsedad contra un compañero](https://corrupcionpolicial.com/caso/investigan-policia-local-valladolid-denuncia-falsa-companero-itv/): Investigado, 2026-11-26
+- [Investigan reunión de Guardia Civil con inteligencia marroquí antes de informar a la jueza](https://corrupcionpolicial.com/caso/guardia-civil-reunion-inteligencia-marroqui-informe-juez-ceuta/): Investigado, 2026-11-25
+- [Interior entrega a Huawei la custodia del historial del DNI electrónico durante 15 años](https://corrupcionpolicial.com/caso/interior-entrega-huawei-custodia-historial-dni-electronico/): Investigado, 2026-11-25
+- [Régimen Disciplinario no sanciona a un mando pese a la clonación declarada probada](https://corrupcionpolicial.com/caso/la-policia-no-sanciona-al-mando-que-clono-el-movil-de-su-exmujer/): Absuelto, 2026-11-25
+- [Condena no firme a dos policías de Benidorm por vejar a una mujer trans](https://corrupcionpolicial.com/caso/condenados-dos-policias-benidorm-vejar-grabar-mujer-trans/): Condenado (no firme), 2026-11-25
+- [Fiscalía pide seis años a un policía local de Córdoba por presunta denuncia falsa](https://corrupcionpolicial.com/caso/fiscalia-seis-anos-policia-local-cordoba-denuncia-falsa/): Procesado / acusado, 2026-11-25
+- [Pedraz rechaza incorporar la denuncia del exjuez Sáenz de Tejada contra la UCO](https://corrupcionpolicial.com/caso/pedraz-rechaza-incorporar-denuncia-exjuez-saenz-de-tejada-contra-uco/): Investigado, 2026-11-25
+- [Fiscalía pide seis años para un policía local de Córdoba por presunta denuncia falsa](https://corrupcionpolicial.com/caso/fiscalia-seis-anos-policia-local-cordoba-denuncia-falsa-2/): Procesado / acusado, 2026-11-25
+- [Fiscalía acusa a un guardia civil de tirotear un coche en fuga en Marratxí](https://corrupcionpolicial.com/caso/fiscalia-acusa-guardia-civil-tirotear-coche-fuga-marratxi/): Procesado / acusado, 2026-11-25
+- [Condena no firme a un policía local de Marbella por apropiarse de 700 euros](https://corrupcionpolicial.com/caso/condenado-seis-meses-policia-local-marbella-apropiarse-700-euros-multas/): Condenado (no firme), 2026-11-25
+- [Fiscalía acusa a un policía local de Córdoba de falsificar un atestado](https://corrupcionpolicial.com/caso/fiscalia-pide-carcel-policia-local-cordoba-atestado-falso/): Procesado / acusado, 2026-11-24
+- [Condenan a un policía local de Marbella por apropiarse de multas de tráfico](https://corrupcionpolicial.com/caso/condenan-policia-local-marbella-apropiarse-multas-trafico/): Condena firme, 2026-11-24
+- [Juicio a dos agentes de la Policía Local de Córdoba por detención violenta y denuncia falsa](https://corrupcionpolicial.com/caso/juicio-agentes-policia-local-cordoba-detencion-violenta-denuncia-falsa/): Procesado / acusado, 2026-11-24
+- [Juicio a un policía local de Córdoba por presunta agresión y falsedad de atestado](https://corrupcionpolicial.com/caso/policia-local-cordoba-juicio-agredir-vecino-falsear-atestado/): Procesado / acusado, 2026-11-24
+- [Mandos de la Guardia Civil denuncian que un informe clave sobre Ceuta quedó en cinco folios](https://corrupcionpolicial.com/caso/mandos-guardia-civil-denuncian-informe-cinco-folios-ceuta-audiencia-nacional/): Investigado, 2026-11-24
+- [Fiscalía pide seis años a un policía de Córdoba por presunta agresión y falsedad](https://corrupcionpolicial.com/caso/fiscalia-seis-anos-policia-local-cordoba-agredir-falsear-atestado/): Procesado / acusado, 2026-11-24
+- [El Supremo confirma la condena de un guardia civil de Picassent por denuncia falsa](https://corrupcionpolicial.com/caso/el-supremo-confirma-la-condena-de-un-guardia-civil-de-picassent-por-denuncia-falsa/): Condenado (no firme), 2026-11-23
+- [Comandante del caso Koldo: Aldama era «el mejor colaborador» de la Guardia Civil](https://corrupcionpolicial.com/caso/comandante-caso-koldo-aldama-mejor-colaborador-guardia-civil/): Investigado, 2026-11-23
+- [Un comandante de la Guardia Civil imputado en el caso Koldo declara a petición propia en la Audiencia Nacional](https://corrupcionpolicial.com/caso/comandante-guardia-civil-imputado-caso-koldo-declara-audiencia-nacional/): Investigado, 2026-11-23
+- [Jusapol difunde una acusación sin pruebas de pucherazo electoral antes del 29N](https://corrupcionpolicial.com/caso/jusapol-difunde-bulo-pucherazo-electoral-29n/): Expediente disciplinario, 2026-11-23
+- [La Audiencia de Zaragoza confirma el archivo de la denuncia contra tres mandos policiales](https://corrupcionpolicial.com/caso/audiencia-zaragoza-ratifica-archivo-denuncia-agente-mandos-policia-local/): Archivado, 2026-11-22
+- [Sobreseído el caso de la joven de Alcorcón que pasó 56 días presa](https://corrupcionpolicial.com/caso/sobreseido-el-caso-de-la-joven-de-alcorcon-que-paso-56-dias-presa/): Archivado, 2026-11-22
+- [Trapagaran anula el nombramiento de un policía local con condena no firme por malversación](https://corrupcionpolicial.com/caso/trapagaran-anula-nombramiento-policia-local-condenado-malversacion/): Condenado (no firme), 2026-11-22
+- [Imputados dos guardias civiles por una denuncia falsa de violación en San Sebastián](https://corrupcionpolicial.com/caso/imputados-dos-guardias-civiles-denuncia-falsa-violacion-san-sebastian/): Investigado, 2026-11-22
+- [Investigan una denuncia por violación que podría ser falsa en el cuartel de Intxaurrondo](https://corrupcionpolicial.com/caso/denuncia-falsa-violacion-cuartel-guardia-civil-intxaurrondo/): Investigado, 2026-11-22
+- [La Audiencia reprocha a los Mossos su tesis sesgada sobre Jonathan Andic](https://corrupcionpolicial.com/caso/audiencia-reprocha-mossos-tesis-sesgada-jonathan-andic/): Investigado, 2026-11-21
+- [Condena no firme a cinco policías de Málaga por falsedad en el atestado](https://corrupcionpolicial.com/caso/condenados-cinco-policias-nacionales-malaga-falsear-atestado-detencion/): Condenado (no firme), 2026-11-21
+- [Investigan a un mando de la Policía Local de Vitoria por dos detenciones sin requisitoria vigente](https://corrupcionpolicial.com/caso/investigan-mando-policia-local-vitoria-dos-detenciones-sin-requisitoria-vigente/): Expediente disciplinario, 2026-11-21

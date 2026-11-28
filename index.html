@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrupción Policial — casos de abusos policiales en España</title>
+  <meta name="description" content="Registro documentado de actuaciones policiales ilegales, abusivas e irregulares en España, con su estado judicial y sus fuentes. Periodismo de datos con presunción de inocencia.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#d71e1e">
+  <meta property="og:title" content="Corrupción Policial — casos de abusos policiales en España">
+  <meta property="og:description" content="Registro documentado de actuaciones policiales ilegales e irregulares en España, con su estado judicial y sus fuentes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://corrupcionpolicial.com/">
+  <meta property="og:image" content="https://corrupcionpolicial.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://corrupcionpolicial.com/">
+  <link rel="alternate" type="application/rss+xml" title="Corrupción Policial RSS" href="/rss.xml">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+<script data-goatcounter="https://churflix.tailfab51b.ts.net/count" async src="/count.js"></script>
+<script defer src="/metricas.js"></script>
+</head>
+<body class="home">
+
+  <!-- ═══ CABECERA FIJA ═══ -->
+  <header class="site-top" id="arriba">
+    <a href="/" class="site-top-mark" aria-label="Corrupción Policial, inicio">Corrupción Policial</a>
+    <nav class="site-top-nav" aria-label="Principal">
+      <a href="#casos" data-i18n="nav-casos">Casos</a>
+      <a href="/cuerpo/" data-i18n="nav-cuerpos">Cuerpos</a>
+      <a href="/conducta/" data-i18n="nav-conductas">Conductas</a>
+      <a href="/ccaa/" data-i18n="nav-territorios">Territorios</a>
+      <a href="/datos/" data-i18n="nav-datos">Datos</a>
+    </nav>
+    <form class="site-top-search" role="search" onsubmit="return app.topSearch(event)">
+      <label class="visually-hidden" for="top-search" data-i18n="hero-search-label">Busca por ciudad, cuerpo o delito</label>
+      <input type="search" id="top-search" data-i18n-placeholder="f-search-ph" placeholder="Buscar en los casos…" autocomplete="off">
+    </form>
+    <div class="topbar-more">
+      <button type="button" aria-expanded="false" aria-controls="menu-mas" data-i18n="nav-mas">Más</button>
+      <ul class="topbar-menu" id="menu-mas">
+        <li><a href="#casos" data-i18n="nav-casos">Casos</a></li>
+        <li><a href="/cuerpo/" data-i18n="nav-cuerpos">Cuerpos</a></li>
+        <li><a href="/conducta/" data-i18n="nav-conductas">Conductas</a></li>
+        <li><a href="/ccaa/" data-i18n="nav-territorios">Territorios</a></li>
+        <li><a href="/impunidad/" data-i18n="nav-impunidad">Impunidad</a></li>
+        <li><a href="/derechos/" data-i18n="nav-derechos">Tus derechos</a></li>
+        <li><a href="/denuncia/" data-i18n="nav-denuncia">Envíanos un caso</a></li>
+        <li><a href="/datos/" data-i18n="nav-datos">Datos</a></li>
+        <li><a href="/metodologia/" data-i18n="nav-metodologia">Metodología</a></li>
+      </ul>
+    </div>
+    <div class="lang-switcher" id="lang-switcher">
+      <label class="visually-hidden" for="lang-select">Idioma / Language</label>
+      <select class="lang-select" id="lang-select" onchange="i18n.setLang(this.value)">
+        <option value="es" lang="es">ES · Español</option><option value="en" lang="en">EN · English</option>
+        <option value="ca" lang="ca">CA · Català</option><option value="eu" lang="eu">EU · Euskara</option>
+        <option value="gl" lang="gl">GL · Galego</option><option value="fr" lang="fr">FR · Français</option>
+        <option value="pt" lang="pt">PT · Português</option><option value="de" lang="de">DE · Deutsch</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ PRIMERA PANTALLA: el nombre, las cifras, el buscador y el mapa ═══ -->
+    <section class="hero" id="inicio" aria-labelledby="t-hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-title" id="t-hero">Corrupción <span class="l2">Policial</span></h1>
+          <p class="hero-sub" data-i18n-html="hero-sub">El registro de casos de abusos y corrupción policial en España: <strong><span class="js-total">917</span> casos</strong>, cada uno con su estado judicial y sus fuentes.</p>
+          <ul class="hero-cifras num" aria-label="Cifras">
+            <li><b class="js-total">917</b><span data-i18n="h3d-casos-label">Casos documentados</span></li>
+            <li><b id="h-condenas">—</b><span data-i18n="ledger-nofirme-corto">Con condena</span></li>
+            <li><b id="h-investigados">—</b><span data-i18n="ledger-investigado-corto">En investigación</span></li>
+            <li><b id="h-absueltos">—</b><span data-i18n="ledger-absuelto-corto">Absueltos o archivados</span></li>
+          </ul>
+          <form class="hero-search" role="search" onsubmit="return app.heroSearch(event)">
+            <label for="main-search-input" data-i18n="hero-search-label">Busca por ciudad, cuerpo o delito</label>
+            <div class="hero-search-row">
+              <input type="search" id="main-search-input" data-i18n-placeholder="hero-search-ph"
+                placeholder="Ej.: Sevilla, Mossos, torturas…" autocomplete="off" oninput="app.heroPreview(event)">
+              <button class="btn btn-dark" type="submit" data-i18n="hero-search-btn">Ver casos</button>
+            </div>
+            <p class="hero-live" id="hero-live" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="hero-map map-widget" id="map-widget" aria-labelledby="t-mapa">
+          <h2 class="hero-map-h" id="t-mapa"><span data-i18n="map-h1">Por</span> <span data-i18n="map-h2">comunidad</span></h2>
+          <div class="map-canvas" id="map-canvas">
+            <div class="map-tooltip" id="map-tooltip" style="display:none;"></div>
+          </div>
+          <aside class="map-ranking" id="map-ranking"></aside>
+          <div class="map-footnote">
+            <button class="filter-btn" id="map-estatal-btn" onclick="ccaaMap.select('Estatal')">
+              <span data-i18n="map-estatal">Ámbito estatal</span> <span id="map-estatal-count"></span>
+            </button>
+            <button class="filter-btn" id="map-reset-btn" onclick="ccaaMap.select('all')" style="display:none;">
+              <span data-i18n="map-reset">Quitar filtro</span>
+            </button>
+            <a class="link-u map-page-link" id="map-page-link" href="/ccaa/" style="display:none;"></a>
+            <a class="link-u map-todas" href="/ccaa/" data-i18n="map-todas">Todas las comunidades</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ RECIENTES ═══ -->
+    <section class="sec-block wrap" id="recientes" aria-labelledby="t-recientes">
+      <div class="block-head">
+        <h2 id="t-recientes" data-i18n="recientes-h">Casos recientes</h2>
+        <a class="link-u" href="#casos" data-i18n="recientes-todos">Ver todos los casos</a>
+      </div>
+      <div class="recientes" id="recientes-grid"></div>
+    </section>
+
+    <!-- ═══ ESTADO DE LOS CASOS: una barra que también filtra ═══ -->
+    <section class="sec-block wrap" id="estados" aria-labelledby="t-cifras">
+      <div class="block-head">
+        <h2 id="t-cifras"><span data-i18n="ledger-h1">Dónde están</span> <span data-i18n-html="ledger-h2">los <span class="js-total">917</span> casos</span></h2>
+      </div>
+      <div class="estado-bar" id="estado-bar" role="img" aria-label="Reparto de los casos por estado judicial"></div>
+      <ul class="estado-leyenda num" id="estado-leyenda"></ul>
+      <p class="note" data-i18n="coverage-notice">Estas cifras reflejan los casos que hemos podido documentar a partir de fuentes públicas, no la frecuencia real de las conductas. Los cuerpos y territorios con más prensa local aparecen más. No comparamos «tasas de corrupción» entre cuerpos ni regiones. Lo que sí mostramos es qué ha pasado en los casos que han llegado a la luz y cuánto han tardado, o no, en resolverse.</p>
+    </section>
+
+    <!-- ═══ EXPLORADOR DE CASOS ═══ -->
+    <section class="sec-block wrap" id="casos" aria-labelledby="t-casos">
+      <div class="explorer">
+        <div class="explorer-head">
+          <h2 id="t-casos" data-i18n="casos-h">Todos los casos</h2>
+          <span class="section-count num" id="article-count"></span>
+        </div>
+        <aside class="explorer-side" aria-label="Filtros">
+          <div class="explorer-side-inner">
+            <details class="filtros" id="filtros" open>
+              <summary data-i18n="filtros-btn">Filtros</summary>
+              <div class="filter-bar" id="filter-bar"></div>
+            </details>
+          </div>
+        </aside>
+        <div class="explorer-main">
+          <ol id="articles-list" class="articles-list" aria-live="polite">
+            <li class="loading"><div class="spinner"></div></li>
+          </ol>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EXPLORA POR ═══ -->
+    <section class="sec-block wrap" id="registro" aria-labelledby="t-explora">
+      <div class="block-head">
+        <h2 id="t-explora" data-i18n="explora-h">Explora por cuerpo y por conducta</h2>
+      </div>
+      <div class="explora">
+        <div>
+          <h3 data-i18n="lista-cuerpos">Por cuerpo</h3>
+          <ul class="kv-list" id="lista-cuerpos"></ul>
+        </div>
+        <div>
+          <h3 data-i18n="lista-conductas">Por conducta</h3>
+          <ul class="kv-list kv-2col" id="lista-conductas"></ul>
+        </div>
+        <div class="metodo">
+          <h3><span data-i18n="registro-h1">Cómo</span> <span data-i18n="registro-h2">trabajamos</span></h3>
+          <p data-i18n="registro-p1">Solo entra un caso cuando un agente o un cuerpo policial es quien comete la conducta ilegal, abusiva o irregular. Cada ficha usa la terminología de la Ley de Enjuiciamiento Criminal: investigado, procesado, condenado, absuelto.</p>
+          <p data-i18n-html="registro-p2">Seguimos los casos en el tiempo: cuando un juzgado archiva, absuelve o condena, la ficha cambia. Si ves un error, <a href="/metodologia/">pide una rectificación</a>.</p>
+          <p class="medios-linea"><span data-i18n="medios-lead">Cada caso sale de lo publicado por</span> <span id="medios-frase" class="medios-frase"><span class="m">eldiario.es</span>, <span class="m">El País</span>, <span class="m">Europa Press</span> <span data-i18n="medios-y">y</span> <span class="m">Público</span>.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CIERRE ═══ -->
+    <section class="cta" aria-labelledby="t-cta">
+      <div class="wrap cta-in">
+        <h2 id="t-cta"><span data-i18n="cta-h1">¿Te ha</span> <span class="l2" data-i18n="cta-h2">pasado a ti?</span></h2>
+        <p data-i18n="cta-p">Cuéntanos el caso, aunque sea de forma anónima. Y si estás ahora mismo en esa situación, mira primero tus derechos.</p>
+        <div class="cta-actions">
+          <a class="btn" href="/denuncia/" data-i18n="cta-btn">Enviar un caso</a>
+          <a class="link-u" href="/derechos/" data-i18n="cta-derechos">Tus derechos ante la policía</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ PIE ═══ -->
+  <footer class="site-footer">
+    <div class="footer-cols">
+      <div>
+        <h2 data-i18n="footer-about-t">El proyecto</h2>
+        <p data-i18n="footer-about">Periodismo de datos sobre actuaciones policiales ilegales en España. Información basada en fuentes públicas; nadie es culpable hasta sentencia firme.</p>
+      </div>
+      <div>
+        <h2 data-i18n="footer-nav-t">Secciones</h2>
+        <ul>
+          <li><a href="/cuerpo/" data-i18n="nav-cuerpos">Cuerpos</a></li>
+          <li><a href="/conducta/" data-i18n="nav-conductas">Conductas</a></li>
+          <li><a href="/ccaa/" data-i18n="nav-territorios">Territorios</a></li>
+          <li><a href="/impunidad/" data-i18n="nav-impunidad">Impunidad</a></li>
+          <li><a href="/derechos/" data-i18n="nav-derechos">Tus derechos</a></li>
+          <li><a href="/metodologia/" data-i18n="nav-metodologia">Metodología</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer-links-title">Datos y contacto</h2>
+        <ul>
+          <li><a href="/datos/" data-i18n="footer-datos">Datos abiertos (CSV, JSON)</a></li>
+          <li><a href="/rss.xml" data-i18n="footer-rss">RSS</a></li>
+          <li><a href="/denuncia/" data-i18n="nav-denuncia">Envíanos un caso</a></li>
+          <li><a href="mailto:contacto@corrupcionpolicial.com" data-i18n="footer-contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="sidebar-donate">Apoya este proyecto</h2>
+        <p data-i18n="donate-text">Periodismo independiente financiado por los lectores. Aceptamos donaciones anónimas en criptomonedas.</p>
+        <div class="wallet"><span>Bitcoin</span><code id="wallet-btc">bc1qvpqecty7p03y2nl0ary980unm82nv4ywz3axpz</code><button type="button" onclick="app.copyCrypto('wallet-btc', this)" data-i18n="donate-copy">Copiar</button></div>
+        <div class="wallet"><span>Monero</span><code id="wallet-xmr">49swUeWpEX2KakdDsybKzYbWgidQAVoBcSgHEUgb1rWwafpFzWPfqRbQRC6BcMXUGcd3uRn4DU9CmFRm2TAY5VyPA3RuPxr</code><button type="button" onclick="app.copyCrypto('wallet-xmr', this)" data-i18n="donate-copy">Copiar</button></div>
+        <details class="wallet"><summary data-i18n="donate-more">Ethereum y Solana</summary>
+          <span>Ethereum</span><code id="wallet-eth">0x1c16A1362cfEF5E5B24886C2F40f21c8730f0E51</code><button type="button" onclick="app.copyCrypto('wallet-eth', this)" data-i18n="donate-copy">Copiar</button>
+          <span>Solana</span><code id="wallet-sol">BFKwHVJ2mvuz6BfyBNtfgJD2hhzD9mE7DcYaswBXj7LQ</code><button type="button" onclick="app.copyCrypto('wallet-sol', this)" data-i18n="donate-copy">Copiar</button>
+        </details>
+      </div>
+    </div>
+    <div class="footer-mark" aria-hidden="true">
+      <svg viewBox="0 -26 1000 122" preserveAspectRatio="xMinYMid meet"><text x="0" y="88" textLength="1000" lengthAdjust="spacingAndGlyphs" font-size="118">CORRUPCIÓN POLICIAL</text></svg>
+    </div>
+    <div class="footer-legal">
+      <span data-i18n="footer-license">Textos CC BY-SA 4.0 · Datos CC BY 4.0 · Terminología LECrim · Derecho de rectificación</span>
+    </div>
+  </footer>
+
+  <script src="/i18n.js"></script>
+  <script src="/main.js"></script>
+  <script src="/map.js"></script>
+  <script src="/animations.js"></script>
+</body>
+</html>

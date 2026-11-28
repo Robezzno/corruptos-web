@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corrupcionpolicial.com/sitemap.xml
+Sitemap: https://corrupcionpolicial.com/sitemap-news.xml

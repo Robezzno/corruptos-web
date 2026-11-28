@@ -1,0 +1,90 @@
+/* ================================================
+   Páginas de contenido: /metodologia/, /derechos/, /denuncia/, /impunidad/
+   Se carga después de /style.css y usa sus tokens (rediseño 2026).
+   ================================================ */
+
+.pg-main {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 20px;
+  padding: 40px var(--m) var(--gap-section); max-width: 1520px; margin: 0 auto;
+}
+.pg-main > * { grid-column: 2 / span 10; min-width: 0; }
+.pg-main > h1 { grid-column: 2 / span 10; font-size: clamp(3.5rem, 10vw, 10rem); line-height: 0.84; max-width: 14ch; margin: 24px 0 36px; }
+.pg-main > .pg-lead { grid-column: 2 / span 8; }
+.pg-main > .pg-figura { grid-column: 2 / span 10; margin: 56px 0 24px; }
+.pg-figura img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+.pg-figura figcaption { margin-top: 8px; font-size: 0.9375rem; color: var(--soft); }
+
+.pg-main h2 { font-size: clamp(2.25rem, 4vw, 3.75rem); margin: 88px 0 20px; }
+.pg-main h3 { font-family: var(--text); text-transform: none; letter-spacing: 0; font-weight: 600; font-size: 1.375rem; line-height: 1.25; margin: 36px 0 10px; }
+.pg-main p, .pg-main li { line-height: 1.6; }
+.pg-main p { max-width: 68ch; margin: 0 0 1em; }
+.pg-main ul, .pg-main ol { padding-left: 1.3em; margin: 0 0 1.2em; max-width: 68ch; }
+.pg-main li + li { margin-top: 0.4em; }
+.pg-main a:not(.pg-btn):not(.btn) { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.pg-main a:not(.pg-btn):not(.btn):hover { text-decoration-thickness: 2px; text-decoration-color: var(--yellow); }
+.pg-main table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 1.0625rem; }
+.pg-main th { text-align: left; background: var(--surface); padding: 10px 12px; font-weight: 600; }
+.pg-main td { padding: 12px; vertical-align: top; border-bottom: 1px solid var(--surface-2); }
+
+.pg-lead { font-size: var(--step-lead); line-height: 1.35; max-width: 40ch; }
+.pg-note, .pg-ref, .pg-revision { font-size: 1rem; color: var(--soft); }
+.pg-note strong { color: var(--ink); }
+
+.pg-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0; }
+.pg-btn {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border: 0; cursor: pointer;
+  background: var(--surface); color: var(--ink); font-weight: 600; font-size: 1.0625rem; text-decoration: none;
+  transition: transform 160ms var(--ease-out), background-color 160ms ease;
+}
+.pg-btn:hover { background: var(--surface-2); }
+.pg-btn:active { transform: translateY(1px) scale(0.98); }
+.pg-btn-primary { background: var(--accent); color: #fff; }
+.pg-btn-primary:hover { background: #b51515; }
+
+/* bloques destacados: campos de color, sin bordes */
+.pg-alert { background: var(--yellow); color: var(--yellow-ink); padding: 36px clamp(20px, 3vw, 44px); margin: 48px 0; }
+.pg-alert h2 { margin-top: 0; }
+.pg-alert a { color: inherit; }
+.pg-box { background: var(--surface); padding: 28px clamp(20px, 3vw, 36px); margin: 32px 0; }
+.pg-box-warn { background: var(--blue); color: #fff; }
+.pg-box-warn a { color: #fff; }
+.pg-h-inline { margin-top: 0 !important; font-size: clamp(1.75rem, 3vw, 2.5rem) !important; }
+
+/* índice de la página */
+.pg-toc { background: var(--surface); padding: 24px 28px; margin: 40px 0; }
+.pg-toc-title { font-weight: 600; margin-bottom: 8px !important; }
+.pg-toc ol, .pg-toc ul { margin: 0; columns: 2 240px; column-gap: 32px; }
+.pg-toc a { text-decoration: none !important; }
+.pg-toc a:hover { text-decoration: underline !important; }
+
+/* definiciones de estados */
+.pg-defs { display: grid; grid-template-columns: minmax(160px, 14ch) 1fr; gap: 14px 24px; margin: 24px 0; }
+.pg-defs dt { font-weight: 600; }
+.pg-defs dd { margin: 0; color: var(--ink); }
+.pg-firme { color: #ff7a7a; }
+
+/* sentencias del TEDH */
+.pg-cases { list-style: none; padding: 0 !important; display: grid; gap: 4px; max-width: none !important; }
+.pg-cases li { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; background: var(--surface); padding: 16px 20px; margin: 0 !important; }
+.pg-case-name { font-weight: 600; font-size: 1.125rem; }
+.pg-case-year { font-family: var(--display); font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.pg-case-what { grid-column: 1 / -1; color: var(--soft); font-size: 1rem; }
+
+.pg-print-only { display: none; }
+
+@media (max-width: 1080px) {
+  .pg-main > * { grid-column: 1 / -1; }
+  .pg-main > .pg-lead { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .pg-main > h1 { font-size: 17vw; }
+  .pg-defs { grid-template-columns: 1fr; gap: 4px; }
+  .pg-defs dd { margin-bottom: 12px; }
+  .pg-figura img { aspect-ratio: 4 / 3; }
+}
+@media print {
+  .pg-noprint, .pg-figura { display: none !important; }
+  .pg-print-only { display: block; }
+  .pg-main { display: block; }
+  .pg-alert, .pg-box, .pg-toc { background: none; color: #000; padding: 0; }
+}
